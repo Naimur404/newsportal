@@ -96,17 +96,17 @@
                             <div class="category">
                                 <span class="badge bg-success">{{ $data->subCategory->sub_category_name }}</span>
                             </div>
-                            <h3><a href="">{{ $data->post_title }}</a></h3>
+                            <h3><a href="javascript:void;">{{ $data->post_title }}</a></h3>
                             <div class="date-user">
                                 <div class="user">
                                     @if($data->author_id == 0)
-                                        <a href="">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
                                         @else
-                                        <a href="">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
                                         @endif
                                 </div>
                                 <div class="date">
-                                    <a href=""> @php
+                                    <a href="javascript:void;"> @php
                                         $ts =  strtotime($post->created_at);
                                         $final_date = date('d F, Y',$ts);
                                         @endphp

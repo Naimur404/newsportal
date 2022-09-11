@@ -60,13 +60,13 @@
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)
-                                        <a href="">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
                                         @else
-                                        <a href="">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
                                         @endif
                                     </div>
                                     <div class="date">
-                                        <a href="">@php
+                                        <a href="javascript:void;">@php
                                             $ts =  strtotime($data->created_at);
                                             $final_date = date('d M, Y',$ts);
                                             @endphp
@@ -109,13 +109,13 @@
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)
-                                        <a href="">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Admin::where('id',$data->admin_id)->first()->name }}</a>
                                         @else
-                                        <a href="">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
+                                        <a href="javascript:void;">{{ App\Models\Author::where('id',$data->author_id)->first()->name }}</a>
                                         @endif
                                     </div>
                                     <div class="date">
-                                        <a href=""> @php
+                                        <a href="javascript:void;"> @php
                                             $ts =  strtotime($data->created_at);
                                             $final_date = date('d M, Y',$ts);
                                             @endphp
@@ -235,14 +235,14 @@
                                     <h3><a href="{{ route('post_detail',$post->id) }}">{{ $post->post_title }}</a></h3>
                                     <div class="date-user">
                                         <div class="user">
-                                            <a href="">@if($post->author_id == 0)
-                                                <a href="">{{ App\Models\Admin::where('id',$post->admin_id)->first()->name }}</a>
+                                            <a href="javascript:void;">@if($post->author_id == 0)
+                                                <a href="javascript:void;">{{ App\Models\Admin::where('id',$post->admin_id)->first()->name }}</a>
                                                 @else
-                                                <a href="">{{ App\Models\Author::where('id',$post->author_id)->first()->name }}</a>
+                                                <a href="javascript:void;">{{ App\Models\Author::where('id',$post->author_id)->first()->name }}</a>
                                                 @endif</a>
                                         </div>
                                         <div class="date">
-                                            <a href=""> @php
+                                            <a href="javascript:void;"> @php
                                                 $ts =  strtotime($post->created_at);
                                                 $final_date = date('d M, Y',$ts);
                                                 @endphp
@@ -286,14 +286,14 @@
                                             <h2><a href="{{ route('post_detail',$post->id) }}">{{ $post->post_title }}</a></h2>
                                             <div class="date-user">
                                                 <div class="user">
-                                                    <a href="">@if($post->author_id == 0)
-                                                        <a href="">{{ App\Models\Admin::where('id',$post->admin_id)->first()->name }}</a>
+                                                    <a href="javascript:void;">@if($post->author_id == 0)
+                                                        <a href="javascript:void;">{{ App\Models\Admin::where('id',$post->admin_id)->first()->name }}</a>
                                                         @else
-                                                        <a href="">{{ App\Models\Author::where('id',$post->author_id)->first()->name }}</a>
+                                                        <a href="javascript:void;">{{ App\Models\Author::where('id',$post->author_id)->first()->name }}</a>
                                                         @endif</a>
                                                 </div>
                                                 <div class="date">
-                                                    <a href="">@php
+                                                    <a href="javascript:void;">@php
                                                         $ts =  strtotime($post->created_at);
                                                         $final_date = date('d M, Y',$ts);
                                                         @endphp
