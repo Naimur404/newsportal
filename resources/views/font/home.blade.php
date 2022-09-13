@@ -1,5 +1,5 @@
 @extends('font.layout.app')
-@section('title','Home')
+@section('title','GhuriFiri')
 @section('content')
 @if($setting_data->news_ticker_status ==1)
 <div class="news-ticker-item">
@@ -22,7 +22,7 @@
 
                               @endif
 
-                            <li><a href="{{ route('post_detail',$data->id) }}">{{ $data->post_title }}</a></li>
+                            <li><a href="{{ route('post_detail',$data->slug) }}">{{ $data->post_title }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -56,7 +56,7 @@
                                 <div class="category">
                                     <span class="badge bg-success badge-sm">{{ $data->subCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('post_detail',$data->id) }}">{{ $data->post_title }}</a></h2>
+                                <h2><a href="{{ route('post_detail',$data->slug) }}">{{ $data->post_title }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)
@@ -105,7 +105,7 @@
                                 <div class="category">
                                     <span class="badge bg-success badge-sm">{{ $data->subCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('post_detail',$data->id) }}">{{ $data->post_title }}</a></h2>
+                                <h2><a href="{{ route('post_detail',$data->slug) }}">{{ $data->post_title }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)
@@ -232,7 +232,7 @@
                                     <div class="category">
                                         <span class="badge bg-success">{{ App\Models\SubCategory::where('id',$post->sub_category_id)->first()->sub_category_name }}</span>
                                     </div>
-                                    <h3><a href="{{ route('post_detail',$post->id) }}">{{ $post->post_title }}</a></h3>
+                                    <h3><a href="{{ route('post_detail',$post->slug) }}">{{ $post->post_title }}</a></h3>
                                     <div class="date-user">
                                         <div class="user">
                                             <a href="javascript:void;">@if($post->author_id == 0)
@@ -283,7 +283,7 @@
                                             <div class="category">
                                                 <span class="badge bg-success">{{ App\Models\SubCategory::where('id',$post->sub_category_id)->first()->sub_category_name }}</span>
                                             </div>
-                                            <h2><a href="{{ route('post_detail',$post->id) }}">{{ $post->post_title }}</a></h2>
+                                            <h2><a href="{{ route('post_detail',$post->slug) }}">{{ $post->post_title }}</a></h2>
                                             <div class="date-user">
                                                 <div class="user">
                                                     <a href="javascript:void;">@if($post->author_id == 0)

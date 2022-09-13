@@ -35,6 +35,7 @@ use App\Http\Controllers\Font\SubscriberController;
 use App\Http\Controllers\Font\TagController;
 use App\Http\Controllers\Font\TermsController;
 use App\Http\Controllers\Font\VideoGalleryController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,7 +50,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/post/{id}',[PostController::class,'detail'])->name('post_detail');
+Route::get('/post/{slug}',[PostController::class,'detail'])->name('post_detail');
 Route::get('/post/category/{id}',[CategoryPostController::class,'index'])->name('cat_post');
 Route::get('/post/sub_category/{id}',[CategoryPostController::class,'sub_cat'])->name('sub_cat');
 Route::get('/photo_gallery',[PhotoGalleryController::class,'photo_gallery'])->name('photo_gallery');
@@ -58,6 +59,7 @@ Route::get('/about',[AboutController::class,'index'])->name('about');
 Route::get('/faq',[FaqController::class,'index'])->name('faq');
 Route::get('/terms&conditions',[TermsController::class,'index'])->name('terms');
 Route::get('/disclaimer',[DisclaimController::class,'index'])->name('disclaim');
+Route::get('sitemap.xml',[SitemapController::class,'index']);
 
 
 Route::get('/login',[LoginController::class,'index'])->name('author_login');

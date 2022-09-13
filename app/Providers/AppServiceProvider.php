@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Setting;
 use App\Models\SidebarAdvertisement;
 use App\Models\SocialItem;
+use App\Models\Tag;
 use App\Models\TopAdvertisement;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -44,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
         $online_poll = OnlinePoll::orderBy('id','desc')->first();
         $social_data = SocialItem::get();
         $setting = Setting::first();
+        $tag = Tag::select('tag_name')->distinct()->get();
        view()->share('global_top_ad_data',$top_ad_data);
        view()->share('global_sidebar_top_ad',$sidebar_top_ad);
        view()->share('global_sidebar_bottom_ad',$sidebar_bottom_ad);
@@ -54,5 +56,6 @@ class AppServiceProvider extends ServiceProvider
        view()->share('global_online_poll',$online_poll);
        view()->share('global_social_item',$social_data);
        view()->share('global_setting',$setting);
+       view()->share('global_tag',$tag);
     }
 }

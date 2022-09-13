@@ -5,12 +5,75 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
         <meta name="description" content="">
+        <meta name="keywords" content="@foreach ($global_tag as $data){{ $data->tag_name }},
+        @endforeach">
 
         <title>@yield('title')</title>
         <link rel="icon" type="image/png" href="{{ asset('font_asset/uploads/'.$global_setting->favicon) }}">
 
 @include('font.layout.head')
+<style>
+    /* Social Button CSS */
+    .share-btn {
+        display: inline-block;
+        color: #ffffff;
+        border: none;
+        padding: 0.5em;
+        width: 4em;
+        box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+        outline: none;
+        text-align: center;
+    }
+
+    .share-btn:hover {
+        color: #eeeeee;
+    }
+
+    .share-btn:active {
+        position: relative;
+        top: 2px;
+        box-shadow: none;
+        color: #e2e2e2;
+        outline: none;
+    }
+
+    .twitter     { background-color: #55acee; }
+    .google-plus { background-color: #dd4b39; }
+    .facebook    { background-color: #3B5998; }
+    .stumbleupon { background-color: #444444; }
+    .reddit      { background-color: #FFA500; }
+    .linkedin    { background-color: #4875B4; }
+    .email       { background-color: #444444; }
+
+    /* Código para botão com texto */
+    .long-share-btn {
+        display: inline-block;
+        color: #ffffff;
+        border: none;
+        padding: 0.5em 1.5em;
+        box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+        outline: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+    .long-share-btn:hover {
+        color: #eeeeee;
+    }
+    .long-share-btn:active {
+        position: relative;
+        top: 2px;
+        box-shadow: none;
+        color: #e2e2e2;
+        outline: none;
+    }
+    a.long-share-btn {
+        text-decoration: none;
+    }
+    </style>
 <style>
 .website-menu,
 .website-menu .bg-primary,

@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\SubCategory;
 use App\Models\Subscriber;
 use App\Models\Tag;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -40,13 +41,14 @@ class AdminPostController extends Controller
 
                 $data = new Post();
                 $data->post_title = $request->post_title;
+                $data->slug = preg_replace('/\s+/u', '-', trim($request->post_title));
                 $data->short_desc = $request->short_desc;
                 $data->post_desc = $request->post_desc;
                 $data->sub_category_id= $request->sub_category_id;
                 $data->is_share = $request->is_share;
                 $data->is_comment = $request->is_comment;
                 $data->is_home = $request->is_home;
-               
+
                 $data->visitors = 1;
                 $data->admin_id = Auth::guard('admin')->user()->id;
                 $data->author_id = 0;
@@ -86,7 +88,7 @@ class AdminPostController extends Controller
                   $link =  '<a href="'.route('post_detail',$ai_id).'" class="btn btn-primary">See Post</a>';
                     $data = ['link' => $link,'title'=>'A New Post Is Published','title2' => 'Hi, A new post is published into our website, Please go to see that post'];
 
-                  
+
                    $subscriber =  Subscriber::where('status',1)->get();
                    foreach ($subscriber as $subs){
                     $user = $subs->email;
@@ -123,13 +125,14 @@ class AdminPostController extends Controller
 
                 $data = Post::find($id);
                 $data->post_title = $request->post_title;
+                $data->slug = preg_replace('/\s+/u', '-', trim($request->post_title));
                 $data->short_desc = $request->short_desc;
                 $data->post_desc = $request->post_desc;
                 $data->sub_category_id= $request->sub_category_id;
                 $data->is_share = $request->is_share;
                 $data->is_comment = $request->is_comment;
                 $data->is_home = $request->is_home;
-                
+
                 $data->visitors = 1;
                 $data->admin_id = Auth::guard('admin')->user()->id;
                 $data->author_id = 0;

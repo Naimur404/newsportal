@@ -29,7 +29,7 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6212352ed76fda0a"></script>
+
         <script src="{{ asset('admin_asset/js/iziToast.min.js')}}"></script>
 
         <!-- Google Analytics -->
@@ -39,6 +39,6 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', $global_setting->analytic_id);
+            gtag('config', '{{ $global_setting->analytic_id }}');
         </script>
         @endif

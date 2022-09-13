@@ -40,7 +40,7 @@
                                 <div class="category">
                                     <span class="badge bg-success">{{ $cat->sub_category_name }}</span>
                                 </div>
-                                <h3><a href="{{ route('post_detail',$data->id) }}">{{ $data->post_title }}</a></h3>
+                                <h3><a href="{{ route('post_detail',$data->slug) }}">{{ $data->post_title }}</a></h3>
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)

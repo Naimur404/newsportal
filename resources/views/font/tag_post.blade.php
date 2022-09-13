@@ -46,7 +46,7 @@
                                     @endphp
                                     <a href="{{ route('sub_cat',$sub_cat->id) }}"><span class="badge bg-success">{{ $sub_cat->sub_category_name }}</span></a>
                                 </div>
-                                <h3><a href="{{ route('post_detail',$data->id) }}">{{ $data->post_title }}</h3>
+                                <h3><a href="{{ route('post_detail',$data->slug) }}">{{ $data->post_title }}</h3>
                                 <div class="date-user">
                                     <div class="user">
                                         @if($data->author_id == 0)

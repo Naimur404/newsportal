@@ -11,9 +11,9 @@ use App\Models\Tag;
 
 class PostController extends Controller
 {
-    public function detail($id){
-        $post = Post::with('subCategory','mCategory')->where('id',$id)->first();
-        $tags = Tag::where('post_id',$id)->get();
+    public function detail($slug){
+        $post = Post::with('subCategory','mCategory')->where('slug',$slug)->first();
+        $tags = Tag::where('post_id',$post->id)->get();
 
         //update page view count
         $new_view = $post->visitors+1;

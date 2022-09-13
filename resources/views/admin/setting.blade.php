@@ -162,7 +162,7 @@
 
                                                 <div class="form-group mb-3">
                                                     <label>Google Analytic Id</label>
-                                                    <input type="text" class="form-control" name="analytic_id" value="{{ $data->analytic_idl }}">
+                                                    <input type="text" class="form-control" name="analytic_id" value="{{ $data->analytic_id }}">
                                                 </div>
                                                 <div class="form-group mb-3">
                                                     <label>Analytic Id</label>
